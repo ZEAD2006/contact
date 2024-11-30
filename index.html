@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Poppins:wght@300;400;500;600&display=swap');
+        /* Reset default styling */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            background-color: #000000;
+        }
+        /* Header styling */
+        
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        header .logo h1 {
+            font-family: 'Nerko One', cursive;
+            font-size: 30px;
+            color: rgb(255, 0, 0);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color .5s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgb(255, 0, 0);
+            color: #000000;
+            border-radius: 5px;
+        }
+        /* nav ul li .register-btn {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 1s;
+        } */
+        /* nav ul li .register-btn:hover {
+            background-color: #f4f4f4;
+            color: #000000;
+        } */
+        /* Hero Section */
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            color: rgb(255, 0, 0);
+            text-align: center;
+            padding-top: 80px;
+            /* To avoid overlap with header */
+            position: relative;
+            overflow: hidden;
+            /* To hide overflowing elements */
+        }
+        
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: heartbeat 2ms infinite;
+            /* زيادة الوقت لجعل التكبير أبطأ */
+            animation: colorChange 4s infinite alternate;
+            /* إضافة تغيير الألوان */
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: colorChangeText 8s infinite alternate;
+            /* إضافة تغيير ألوان النص */
+        }
+        
+        .btn-primary {
+            background-color: rgb(255, 0, 0);
+            color: #000000;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: 1s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0004ff;
+            color: #000000;
+        }
+        /* About Section */
+        
+        .about {
+            padding: 30px 20px;
+            background-color: rgba(45, 43, 43, 0.879);
+            text-align: center;
+            color: #000000;
+            margin-bottom: 30px;
+            /* زودت المسافة الفارغة تحت .about */
+        }
+        
+        .about h2 {
+            font-size: 72px;
+            margin-bottom: 10px;
+            color: #ff0000;
+            animation: colorChangeAbout 2s infinite alternate;
+            /* إضافة تأثير تغيير الألوان */
+        }
+        
+        .about p {
+            font-size: 55px;
+            max-width: 800px;
+            margin: 0 auto 120px auto;
+            /* زودت الـ margin السفلي للنص */
+            animation: colorChangeTextAbout 4s infinite alternate;
+            /* إضافة تغيير ألوان النص */
+        }
+        /* Footer Section */
+        
+        footer {
+            background-color: #000000;
+            color: rgb(255, 0, 0);
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: colorChangeTextFooter 8s infinite alternate;
+            /* إضافة تأثير تغيير الألوان */
+        }
+        /* Animation for heartbeat effect */
+        
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        /* Animation for color change */
+        
+        @keyframes colorChange {
+            0% {
+                color: #ff0000;
+            }
+            25% {
+                color: #000f4d;
+            }
+            50% {
+                color: #800000;
+            }
+            75% {
+                color: #ff0000;
+            }
+            100% {
+                color: #0004ff;
+            }
+        }
+        /* Animation for text color change */
+        
+        @keyframes colorChangeText {
+            0% {
+                color: #ffffff;
+            }
+            25% {
+                color: #c41a1a;
+            }
+            50% {
+                color: #0f0548;
+            }
+            75% {
+                color: #447a26;
+            }
+            100% {
+                color: #500c43;
+            }
+        }
+    </style>
+    <style>
+        /* التصميم الأساسي يبقى كما هو */
+        /* الشاشات المتوسطة: التابلت */
+        
+        @media (max-width: 1024px) {
+            body {
+                font-size: 15px;
+            }
+            header {
+                padding: 10px;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero-text h2 {
+                font-size: 36px;
+            }
+            .hero-text p {
+                font-size: 18px;
+            }
+            .btn-primary {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+        /* الشاشات الصغيرة: الموبايل */
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .hero-text h2 {
+                font-size: 28px;
+            }
+            .hero-text p {
+                font-size: 14px;
+            }
+            .about h2 {
+                font-size: 24px;
+            }
+            .about p {
+                font-size: 12px;
+            }
+            .btn-primary {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            footer {
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+        /* الشاشات الصغيرة جدًا: الموبايل الصغير */
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+            .hero-text h2 {
+                font-size: 22px;
+            }
+            .hero-text p {
+                font-size: 12px;
+            }
+            .btn-primary {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            footer {
+                font-size: 10px;
+            }
+        }
+    </style>
+    <section class="footer-buttons-section">
+        <div class="footer-buttons">
+            <button class="btn">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </div>
+    </section>
+
+    <style>
+        /* Footer Buttons Section Styling */
+        
+        .footer-buttons-section {
+            background-color: #333;
+            padding: 40px 0;
+            text-align: center;
+        }
+        /* Styling for Footer Buttons */
+        
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-buttons .btn {
+            background-color: #1abd9c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Hover and Focus Effects */
+        
+        .footer-buttons .btn:hover,
+        .footer-buttons .btn:focus {
+            background-color: white;
+            color: #1abd9c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Active Button Effect */
+        
+        .footer-buttons .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Zeyad Nasser</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=100049574467612">Facebook</a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=%2B201141699086&text&type=phone_number&app_absent=0">Whats'app 1</a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=%2B201141699087&text&type=phone_number&app_absent=0">Whats'app 2</a></li>
+                <li><a href="https://t.me/Zead_00">Telegram 1</a></li>
+                <li><a href="https://t.me/Zead_nasser9">Telegram 2</a></li>
+                <li><a href="https://www.instagram.com/ibn_baghdadi/">Instagram</a></li>
+                <!-- <li><a href="#" class="register-btn">Register</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Welcome to My Website</h2>
+            <p>This is my Contact Methods</p>
+            <a href="https://github.com/ZEAD2006" class="btn-primary">My Github</a>
+        </div>
+    </section>
+    <section class="about">
+        <h2>My Skills</h2>
+        <p>python,html,css,C++,penetration testing,Ethical hacking</p>
+    </section>
+
+
+    <footer>❤️Powered by Zeyad Nasser❤️ </footer>
+</body>
+
+</html>
